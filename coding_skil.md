@@ -1,0 +1,1 @@
+ctrl+shift+r / ctrl+f5 强制（不使用缓存）刷新google chrome网页
