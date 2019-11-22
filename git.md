@@ -345,7 +345,8 @@ $ git branch <branchname>
 $ git branch
 ```
 
-`git branch`命令会列出所有分支，当前分支前面会标一个*号。
+`git branch`命令会列出所有分支，当前分支前面会标一个\*号。
+
 
 
 #### 切换分支
