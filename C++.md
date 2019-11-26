@@ -74,4 +74,17 @@ sort(a1, a1 + size); //sort
 	}
 ```
 
+## unordered_map
+```C++
+unordered_map<int, int> m;
+cout<<[0]// 默认值为1
+```
+
+```C++
+String s='asdas';
+s[0]//数据类型为char
+```
+
+
+
 
