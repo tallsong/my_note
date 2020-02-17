@@ -1,0 +1,150 @@
+/*
+    css注释 ctrl+shift+"/"
+*/
+
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<section class="normal" id="section-">
+                    
+ <h2 id="css文本设置">css文本设置</h2>
+<p>常用的应用文本的css样式：</p>
+<ul>
+<li><p>color 设置文字的颜色，如： color:red;</p>
+</li>
+<li><p>font-size 设置文字的大小，如：font-size:12px;</p>
+</li>
+<li><p>font-family 设置文字的字体，如：font-family:'微软雅黑';</p>
+</li>
+<li><p>font-style 设置字体是否倾斜，如：font-style:'normal';  设置不倾斜，font-style:'italic';设置文字倾斜</p>
+</li>
+<li><p>font-weight 设置文字是否加粗，如：font-weight:bold; 设置加粗 font-weight:normal 设置不加粗</p>
+</li>
+<li><p>line-height 设置文字的行高，设置行高相当于在每行文字的上下同时加间距，
+如：line-height:24px;</br>
+  <img src="./images/lineheight.jpg" alt="行高示例图片"> </p>
+</li>
+</ul>
+<ul>
+<li><p>font 同时设置文字的几个属性，写的顺序有兼容问题，建议按照如下顺序写：
+font：是否加粗 字号/行高 字体；如： font:normal 12px/36px '微软雅黑';</p>
+</li>
+<li><p>text-decoration 设置文字的下划线，如：text-decoration:none; 将文字下划线去掉</p>
+</li>
+<li><p>text-indent 设置文字首行缩进，如：text-indent:24px; 设置文字首行缩进24px
+</br>
+  <img src="./images/suojin.jpg" alt="行高示例图片"> </p>
+</li>
+<li><p>text-align 设置文字水平对齐方式，如text-align:center 设置文字水平居中</p>
+</li>
+</ul>
+
+                    
+ </section>
+ <section class="normal" id="section-">
+                    
+                        <h2 id="css颜色表示法">css颜色表示法</h2>
+<p>css颜色值主要有三种表示方法：</p>
+<p>1、颜色名表示，比如：red 红色，gold 金色</p>
+<p>2、rgb表示，比如：rgb(255,0,0)表示红色</p>
+<p>3、16进制数值表示，比如：#ff0000 表示红色，这种可以简写成 #f00</p>
+
+                    
+                    </section>
+
+<section class="normal" id="section-">
+                    
+                        <h2 id="css选择器">css选择器</h2>
+<p>常用的选择器有如下几种：</p>
+<h5 id="1、标签选择器">1、标签选择器</h5>
+<p>标签选择器，此种选择器影响范围大，建议尽量应用在层级选择器中。<br>举例：</p>
+<pre><code>*{margin:0;padding:0}
+div{color:red}   
+
+
+&lt;div&gt;....&lt;/div&gt;   &lt;!-- 对应以上两条样式 --&gt;
+&lt;div class="box"&gt;....&lt;/div&gt;   &lt;!-- 对应以上两条样式 --&gt;
+</code></pre><h5 id="2、id选择器">2、id选择器</h5>
+<p>通过id名来选择元素，元素的id名称不能重复，所以一个样式设置项只能对应于页面上一个元素，不能复用，id名一般给程序使用，所以不推荐使用id作为选择器。<br>举例：</p>
+<pre><code>#box{color:red} 
+
+&lt;div id="box"&gt;....&lt;/div&gt;   &lt;!-- 对应以上一条样式，其它元素不允许应用此样式 --&gt;
+</code></pre><h5 id="3、类选择器">3、类选择器</h5>
+<p>通过类名来选择元素，一个类可应用于多个元素，一个元素上也可以使用多个类，应用灵活，可复用，是css中应用最多的一种选择器。<br>举例：</p>
+<pre><code>.red{color:red}
+.big{font-size:20px}
+.mt10{margin-top:10px} 
+
+&lt;div class="red"&gt;....&lt;/div&gt;
+&lt;h1 class="red big mt10"&gt;....&lt;/h1&gt;
+&lt;p class="red mt10"&gt;....&lt;/p&gt;
+</code></pre><h5 id="4、层级选择器">4、层级选择器</h5>
+<p>主要应用在选择父元素下的子元素，或者子元素下面的子元素，可与标签元素结合使用，减少命名，同时也可以通过层级，防止命名冲突。<br>举例：</p>
+<pre><code>.box span{color:red}
+.box .red{color:pink}
+.red{color:red}
+
+&lt;div class="box"&gt;
+    &lt;span&gt;....&lt;/span&gt;
+    &lt;a href="#" class="red"&gt;....&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;h3 class="red"&gt;....&lt;/h3&gt;
+</code></pre><h5 id="5、组选择器">5、组选择器</h5>
+<p>多个选择器，如果有同样的样式设置，可以使用组选择器。<br>举例：</p>
+<pre><code>.box1,.box2,.box3{width:100px;height:100px}
+.box1{background:red}
+.box2{background:pink}
+.box2{background:gold}
+
+&lt;div class="box1"&gt;....&lt;/div&gt;
+&lt;div class="box2"&gt;....&lt;/div&gt;
+&lt;div class="box3"&gt;....&lt;/div&gt;
+</code></pre><h5 id="6、伪类及伪元素选择器">6、伪类及伪元素选择器</h5>
+<p>常用的伪类选择器有hover，表示鼠标悬浮在元素上时的状态，伪元素选择器有before和after,它们可以通过样式在元素中插入内容。  </p>
+<pre><code>.box1:hover{color:red}
+.box2:before{content:'行首文字';}
+.box3:after{content:'行尾文字';}
+
+
+&lt;div class="box1"&gt;....&lt;/div&gt;
+&lt;div class="box2"&gt;....&lt;/div&gt;
+&lt;div class="box3"&gt;....&lt;/div&gt;
+</code></pre>
+                    
+                    </section>
+
+
+
+<section class="normal" id="section-">
+<h2 id="css盒子模型">CSS盒子模型</h2>
+<p><strong> 盒子模型解释 </strong><br>元素在页面中显示成一个方块，类似一个盒子，CSS盒子模型就是使用现实中盒子来做比喻，帮助我们设置元素对应的样式。盒子模型示意图如下：</p>
+<p><img src="./images/box.jpg" alt="盒子模型示例图片"></p>
+<p>把元素叫做盒子，设置对应的样式分别为：盒子的宽度(width)、盒子的高度(height)、盒子的边框(border)、盒子内的内容和边框之间的间距(padding)、盒子与盒子之间的间距(margin)。</p>
+<p><strong> 设置宽高 </strong>  </p>
+<pre><code>width:200px;  /* 设置盒子的宽度，此宽度是指盒子内容的宽度，不是盒子整体宽度(难点) */ 
+height:200px; /* 设置盒子的高度，此高度是指盒子内容的高度，不是盒子整体高度(难点) */
+</code></pre><p><strong> 设置边框 </strong><br>设置一边的边框，比如顶部边框，可以按如下设置：  </p>
+<pre><code>border-top-color:red;    /* 设置顶部边框颜色为红色 */  
+border-top-width:10px;   /* 设置顶部边框粗细为10px */   
+border-top-style:solid;  /* 设置顶部边框的线性为实线，常用的有：solid(实线)  
+  dashed(虚线)  dotted(点线); */
+</code></pre><p>上面三句可以简写成一句：  </p>
+<pre><code>border-top:10px solid red;
+</code></pre><p>设置其它三个边的方法和上面一样，把上面的'top'换成'left'就是设置左边，换成'right'就是设置右边，换成'bottom'就是设置底边。</p>
+<p>四个边如果设置一样，可以将四个边的设置合并成一句：  </p>
+<pre><code>border:10px solid red;
+</code></pre><p><strong> 设置内间距padding </strong>  </p>
+<p>设置盒子四边的内间距，可设置如下：  </p>
+<pre><code>padding-top：20px;     /* 设置顶部内间距20px */ 
+padding-left:30px;     /* 设置左边内间距30px */ 
+padding-right:40px;    /* 设置右边内间距40px */ 
+padding-bottom:50px;   /* 设置底部内间距50px */
+</code></pre><p>上面的设置可以简写如下：  </p>
+<pre><code>padding：20px 40px 50px 30px; /* 四个值按照顺时针方向，分别设置的是 上 右 下 左  
+四个方向的内边距值。 */
+</code></pre><p>padding后面还可以跟3个值，2个值和1个值，它们分别设置的项目如下：</p>
+<pre><code>padding：20px 40px 50px; /* 设置顶部内边距为20px，左右内边距为40px，底部内边距为50px */ 
+padding：20px 40px; /* 设置上下内边距为20px，左右内边距为40px*/ 
+padding：20px; /* 设置四边内边距为20px */
+</code></pre><p><strong> 设置外间距margin </strong>  </p>
+<p>外边距的设置方法和padding的设置方法相同，将上面设置项中的'padding'换成'margin'就是外边距设置方法。</p>                 
+</section>

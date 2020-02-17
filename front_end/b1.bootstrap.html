@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<section class="normal" id="section-">
+                    
+                        <h2 id="bootstrap">bootstrap</h2>
+<p>简单、直观、强悍的前端开发框架，让web开发更迅速、简单。
+来自Twitter，是目前很受欢迎的前端框架之一。
+Bootrstrap是基于HTML、CSS、JavaScript的，让书写代码更容易。
+移动优先，响应式布局开发。</p>
+<p>bootstrap中文网址：<a href="http://www.bootcss.com/" target="_blank">http://www.bootcss.com/</a></p>
+<h4 id="bootstrap-容器">bootstrap 容器</h4>
+<ul>
+<li>container-fluid 流体</li>
+<li>container  <ul>
+<li>1170</li>
+<li>970</li>
+<li>750</li>
+<li>100%</li>
+</ul>
+</li>
+</ul>
+<pre><code>&lt;div class="container-fluid"&gt;流体容器&lt;/div&gt;
+&lt;div class="container"&gt;响应式固定容器&lt;/div&gt;
+</code></pre><h4 id="bootstrap响应式查询区间：">bootstrap响应式查询区间：</h4>
+<p>1、大于等于768<br>2、大于等于992<br>3、大于等于1200</p>
+<h4 id="bootstrap-栅格系统">bootstrap 栅格系统</h4>
+<p>bootstrap将页面横向分为12等分，按照12等分定义了适应不同宽度等分的样式类，这些样式类组成了一套响应式、移动设备优先的流式栅格系统：</p>
+<p>1、col-lg-<em>  大于1200排成一行，小于1200分别占一行<br>2、col-md-</em>  大于992排成一行，小于992分别占一行<br>3、col-sm-<em>  大于768排成一行，小于768分别占一行<br>4、col-xs-</em>  始终排列成一行  </p>
+<pre><code>&lt;style type="text/css"&gt;
+    div[class*='col-']{
+
+        background-color:cyan;
+        border:1px solid #ddd;
+        height:50px;
+    }
+&lt;/style&gt;
+
+......
+
+&lt;div class="container"&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col-lg-3"&gt;col-lg-3&lt;/div&gt;
+        &lt;div class="col-lg-3"&gt;col-lg-3&lt;/div&gt;
+        &lt;div class="col-lg-5"&gt;col-lg-5&lt;/div&gt;
+        &lt;div class="col-lg-1"&gt;col-lg-1&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;br&gt;
+    &lt;br&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col-md-3"&gt;col-md-3&lt;/div&gt;
+        &lt;div class="col-md-3"&gt;col-md-3&lt;/div&gt;
+        &lt;div class="col-md-3"&gt;col-md-3&lt;/div&gt;
+        &lt;div class="col-md-3"&gt;col-md-3&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;br&gt;
+    &lt;br&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col-sm-3"&gt;col-sm-3&lt;/div&gt;
+        &lt;div class="col-sm-3"&gt;col-sm-3&lt;/div&gt;
+        &lt;div class="col-sm-3"&gt;col-sm-3&lt;/div&gt;
+        &lt;div class="col-sm-3"&gt;col-sm-3&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;br&gt;
+    &lt;br&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col-xs-3"&gt;col-xs-3&lt;/div&gt;
+        &lt;div class="col-xs-3"&gt;col-xs-3&lt;/div&gt;
+        &lt;div class="col-xs-3"&gt;col-xs-3&lt;/div&gt;
+        &lt;div class="col-xs-3"&gt;col-xs-3&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre><h4 id="列偏移">列偏移</h4>
+<p>1、col-lg-offset-<em><br>2、col-md-offset-</em><br>3、col-sm-offset-<em><br>4、col-xs-offset-</em>  </p>
+<h4 id="bootstrap-按钮">bootstrap 按钮</h4>
+<p>1、btn  声明按钮<br>2、btn-default 默认按钮样式<br>3、btn-primay<br>4、btn-success<br>5、btn-info<br>6、btn-warning<br>7、btn-danger<br>8、btn-link<br>9、btn-lg<br>10、btn-md<br>11、btn-xs<br>12、btn-block  宽度是父级宽100%的按钮<br>13、active<br>14、disabled<br>15、btn-group  定义按钮组  </p>
+<pre><code>&lt;!-- 一般按钮组 --&gt;
+&lt;div class="btn-group"&gt;
+    &lt;input type="button" name="" value="按钮一" class="btn btn-primary"&gt;
+    &lt;input type="button" name="" value="按钮二" class="btn btn-warning"&gt;
+    &lt;input type="button" name="" value="按钮三" class="btn btn-danger"&gt;
+&lt;/div&gt;
+
+&lt;!-- 通栏按钮组 
+     如果用input标签做按钮，需要将它用 btn-group的容器包起来
+--&gt;
+&lt;div class="btn-group btn-group-justified"&gt;
+    &lt;div class="btn-group"&gt;
+        &lt;input type="button" name="" value="按钮一" class="btn btn-primary"&gt;
+    &lt;/div&gt;
+    &lt;div class="btn-group"&gt;
+        &lt;input type="button" name="" value="按钮二" class="btn btn-warning"&gt;
+    &lt;/div&gt;
+    &lt;div class="btn-group"&gt;
+        &lt;input type="button" name="" value="按钮三" class="btn btn-danger"&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- 通栏按钮组，如果用a标签做按钮，就不用上面的结构，直接写
+--&gt;
+&lt;div class="btn-group btn-group-justified"&gt;
+    &lt;a href="#" class="btn btn-primary"&gt;按钮一&lt;/a&gt;
+    &lt;a href="#" class="btn btn-default"&gt;按钮二&lt;/a&gt;
+    &lt;a href="#" class="btn btn-default"&gt;按钮三&lt;/a&gt;
+&lt;/div&gt;
+</code></pre><h4 id="bootstrap-表单">bootstrap 表单</h4>
+<p>1、form 声明一个表单域<br>2、form-inline 内联表单域<br>3、form-horizontal 水平排列表单域<br>4、form-group 表单组、包括表单文字和表单控件<br>5、form-control 文本输入框、下拉列表控件样式<br>6、checkbox checkbox-inline 多选框样式<br>7、radio radio-inline 单选框样式<br>8、input-group 表单控件组<br>9、input-group-addon 表单控件组物件样式<br>10、input-group-btn 表单控件组物件为按钮的样式<br>11、form-group-lg  大尺寸表单<br>12、form-group-sm  小尺寸表单</p>
+<pre><code>&lt;!--  表单  --&gt;
+&lt;form role="form"&gt;
+  &lt;div class="form-group form-group-lg"&gt;
+    &lt;label for="exampleInputEmail1"&gt;Email address&lt;/label&gt;
+    &lt;input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email"&gt;
+  &lt;/div&gt;
+  &lt;div class="form-group"&gt;
+    &lt;label for="exampleInputPassword1"&gt;Password&lt;/label&gt;
+    &lt;input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"&gt;
+  &lt;/div&gt;
+  &lt;div class="form-group"&gt;
+    &lt;label for="exampleInputFile"&gt;File input&lt;/label&gt;
+    &lt;input type="file" id="exampleInputFile"&gt;
+    &lt;p class="help-block"&gt;Example block-level help text here.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="checkbox"&gt;
+    &lt;label&gt;
+      &lt;input type="checkbox"&gt; Check me out
+    &lt;/label&gt;
+  &lt;/div&gt;
+  &lt;button type="submit" class="btn btn-default"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;!--  表单控件组  --&gt;
+&lt;div class="input-group"&gt;
+  &lt;input type="text" class="form-control"&gt;
+  &lt;span class="input-group-addon"&gt;@&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;!--  表单控件组  --&gt;
+&lt;div class="input-group"&gt;
+  &lt;input type="text" class="form-control"&gt;
+  &lt;span class="input-group-btn"&gt;
+    &lt;button class="btn btn-default" type="button"&gt;Go!&lt;/button&gt;
+  &lt;/span&gt;
+&lt;/div&gt;
+</code></pre><h4 id="bootstrap-图片">bootstrap 图片</h4>
+<p>img-responsive  声明响应式图片  </p>
+<h4 id="bootstrap-字体图标">bootstrap 字体图标</h4>
+<p>通过字体代替图标，font文件夹需要和css文件夹在同一目录  </p>
+<h4 id="bootstrap-导航条">bootstrap 导航条</h4>
+<p>1、navbar  声明导航条<br>2、navbar-default  声明默认的导航条样式<br>3、navbar-inverse  声明反白的导航条样式<br>4、navbar-static-top  去掉导航条的圆角<br>5、navbar-fixed-top  固定到顶部的导航条<br>6、navbar-fixed-bottom  固定到底部的导航条<br>7、navbar-header  申明logo的容器<br>8、navbar-brand  针对logo等固定内容的样式<br>11、nav navbar-nav 定义导航条中的菜单<br>12、navbar-form 定义导航条中的表单<br>13、navbar-btn 定义导航条中的按钮<br>14、navbar-text 定义导航条中的文本<br>15、navbar-left  菜单靠左<br>16、navbar-right  菜单靠右</p>
+<pre><code>&lt;!-- 可伸缩菜单 data-target="#.." 需要加#  --&gt;
+&lt;div class="navbar navbar-inverse navbar-static-top "&gt;
+    &lt;div class="container"&gt;
+    &lt;div class="navbar-header"&gt;
+        &lt;button class="navbar-toggle" data-toggle="collapse" data-target="#mymenu"&gt;
+            &lt;span class="icon-bar"&gt;&lt;/span&gt;
+            &lt;span class="icon-bar"&gt;&lt;/span&gt;
+            &lt;span class="icon-bar"&gt;&lt;/span&gt;
+         &lt;/button&gt;
+         &lt;a href="#" class="navbar-brand"&gt;LOGO&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class="collapse navbar-collapse" id="mymenu"&gt;
+        &lt;ul class="nav navbar-nav"&gt;
+            &lt;li class="active"&gt;&lt;a href="#"&gt;首页&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;公司新闻&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;行业动态&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;form class="navbar-form navbar-right"&gt;
+            &lt;div class="form-group"&gt;
+                &lt;div class="input-group"&gt;
+                  &lt;input type="text" class="form-control"&gt;
+                  &lt;span class="input-group-btn"&gt;
+                    &lt;button class="btn btn-default" type="button"&gt;Go!&lt;/button&gt;
+                  &lt;/span&gt;
+                &lt;/div&gt;    
+            &lt;/div&gt;
+        &lt;/form&gt;
+    &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre><h4 id="路径导航">路径导航</h4>
+<pre><code>&lt;ol class="breadcrumb"&gt;
+  &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#"&gt;Library&lt;/a&gt;&lt;/li&gt;
+  &lt;li class="active"&gt;Data&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre><h4 id="巨幕">巨幕</h4>
+<pre><code>&lt;div class="jumbotron"&gt;
+  &lt;div class="container"&gt;
+    ...
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre><h4 id="bootstrap-模态框">bootstrap 模态框</h4>
+<p>1、modal  声明一个模态框<br>2、modal-dialog  定义模态框尺寸<br>3、modal-lg  定义大尺寸模态框<br>4、modal-sm  定义小尺寸模态框<br>5、modal-header<br>6、modal-body<br>7、modal-footer </p>
+<pre><code>&lt;button class="btn btn-primary" data-toggle="modal" data-target="#mymodal"&gt;大弹出框按钮&lt;/button&gt;
+
+&lt;div class="modal fade" id="mymodal"&gt;
+        &lt;div class="modal-dialog modal-lg"&gt;
+            &lt;div class="modal-content"&gt;
+                &lt;div class="modal-header"&gt;
+                    大尺寸弹出框
+                &lt;/div&gt;
+                &lt;div class="modal-body"&gt;
+                    模态框主体
+                  &lt;/div&gt;
+                  &lt;div class="modal-footer"&gt;
+                    &lt;button type="button" class="btn btn-default"  data-dismiss="modal"&gt;Close&lt;/button&gt;
+                    &lt;button type="button" class="btn btn-primary"&gt;Save changes&lt;/button&gt;
+                  &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+&lt;/div&gt;
+</code></pre><h4 id="bootstrap-下拉菜单">bootstrap 下拉菜单</h4>
+<p>1、dropdown-toggle<br>2、dropdown-menu  </p>
+<pre><code>&lt;div class="row"&gt;            
+    &lt;div class="dropdown"&gt;
+        &lt;div class="btn btn-primary  dropdown-toggle" data-toggle="dropdown"&gt;
+            下拉菜单
+            &lt;span class="caret"&gt;&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;ul class="dropdown-menu"&gt;
+            &lt;li&gt;&lt;a href="#"&gt;菜单一&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;菜单二&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;菜单三&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre><h4 id="bootstrap-隐藏类">bootstrap 隐藏类</h4>
+<p>1、hidden-xs<br>2、hidden-sm<br>3、hidden-md<br>4、hidden-lg  </p>
+<h4 id="bootstrap-响应式专题网站实例">bootstrap 响应式专题网站实例</h4>
+
+                    
+                    </section>
+</body>
+</html>

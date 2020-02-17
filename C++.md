@@ -1,13 +1,6 @@
 # my_cpp
-sqe8ql
-this is leetcode solution and learn cpp for you all
 
 ***[markdown basic-syntax](https://www.markdownguide.org/basic-syntax/)***
-
-# P94
-答案:P950
-
-
 # 基础知识 
 ## C++ 与C的区别
 C++中函数的形参的列表为void表面函数不接受任何参数，这与括号里面空着等效；
@@ -35,10 +28,23 @@ sizeof(short):2    (bytes )	sizeof(int):4 	sizeof(long):4	sizeof(long):8
 指针p也是对象，它同样有地址&p和存储的值p，只不过，p存储的数据类型是数据的地址。
 
 cout<<hex ; 修改cout显示证书的方式;
+```C++
+cin会忽略换行和空格
+```
 
-'9' - '0'的类型为**int**
+\-\'9\' - \'0\'的类型为**int**
+
+计算机在存储数据时候必须跟踪的三种基本属性：
+* 信息存储在何处
+* 存储的值为多少
+* 存储的信息是什么类型
 
 # 指针
+```C++
+int * p1,p2;
+//定义了一个指针和整数；
+
+```
 
 * 箭头（->）：左边必须为指针；
 * 点号（.）：左边必须为实体。
@@ -85,6 +91,7 @@ String s='asdas';
 s[0]//数据类型为char
 ```
 
+# 复合类型
 
 
 

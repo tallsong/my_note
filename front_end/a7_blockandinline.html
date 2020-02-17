@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta chatset="utf-8">
+        <title>Document</title>
+        <style type="text/css">
+            .book .book-body .page-wrapper .page-inner section.normal {
+                display: block;
+                word-wrap: break-word;
+                overflow: hidden;
+                color: #333;
+                line-height: 1.7;
+                text-size-adjust: 100%;
+                -ms-text-size-adjust: 100%;
+                -webkit-text-size-adjust: 100%;
+                -moz-text-size-adjust: 100%
+            }
+
+            .box {
+                border: 1px solid #0000;
+                margin: 50px auto 0;
+                font-size: 0;
+            }
+
+            .box a {
+                background-color: gold;
+                padding: 0 10px;
+                font-size: 16px;
+                display: inline-block;
+            }
+        </style>
+    </head>
+    <body>
+        <section class="normal" id="section-">
+            <h2 id="块元素、内联元素、内联块元素">块元素、内联元素、内联块元素</h2>
+            <p>元素就是标签，布局中常用的有三种标签，块元素、内联元素、内联块元素，了解这三种元素的特性，才能熟练的进行页面布局。</p>
+            <p>
+                <strong>块元素 </strong>
+                <br>块元素，也可以称为行元素，布局中常用的标签如：div、p、ul、li、h1~h6、dl、dt、dd等等都是块元素，它在布局中的行为：
+    
+            
+            
+            
+            </p>
+            <ul>
+                <li>支持全部的样式</li>
+                <li>如果没有设置宽度，默认的宽度为父级宽度100%</li>
+                <li>盒子占据一行、即使设置了宽度</li>
+            </ul>
+            <p>
+                <strong>内联元素</strong>
+                <br>内联元素，也可以称为行内元素，布局中常用的标签如：a、span、em、b、strong、i等等都是内联元素，它们在布局中的行为：
+    
+            
+            
+            
+            </p>
+            <ul>
+                <li>支持部分样式（不支持宽、高、margin上下、padding上下）</li>
+                <li>宽高由内容决定</li>
+                <li>盒子并在一行</li>
+                <li>代码换行，盒子之间会产生间距</li>
+                <li>子元素是内联元素，父元素可以用text-align属性设置子元素水平对齐方式</li>
+            </ul>
+            <p>
+                <strong>解决内联元素间隙的方法 </strong>
+                <br>
+                1、去掉内联元素之间的换行<br>2、将内联元素的父级设置font-size为0，内联元素自身再设置font-size
+    
+            
+            
+            
+            </p>
+            <p>
+                <strong>内联块元素</strong>
+                <br>内联块元素，也叫行内块元素，是新增的元素类型，现有元素没有归于此类别的，img和input元素的行为类似这种元素，但是也归类于内联元素，我们可以用display属性将块元素或者内联元素转化成这种元素。它们在布局中表现的行为：
+    
+            
+            
+            
+            </p>
+            <ul>
+                <li>支持全部样式</li>
+                <li>如果没有设置宽高，宽高由内容决定</li>
+                <li>盒子并在一行</li>
+                <li>代码换行，盒子会产生间距</li>
+                <li>子元素是内联块元素，父元素可以用text-align属性设置子元素水平对齐方式。</li>
+            </ul>
+            <p>这三种元素，可以通过display属性来相互转化，不过实际开发中，块元素用得比较多，所以我们经常把内联元素转化为块元素，少量转化为内联块，而要使用内联元素时，直接使用内联元素，而不用块元素转化了。</p>
+            <p>
+                <strong>display属性</strong>
+                <br>
+                display属性是用来设置元素的类型及隐藏的，常用的属性有：<br>
+                1、none    元素隐藏且不占位置<br>
+                2、block   元素以块元素显示<br>
+                3、inline  元素以内联元素显示<br>4、inline-block 元素以内联块元素显示  
+    
+            
+            
+            
+            </p>
+        </section>
+        <div class="box">
+            <a href="#">1111111</a>
+            <a href="#">1111111</a>
+            <a href="#">1111111</a>
+            <a href="#">1111111</a>
+            <a href="#">1111111</a>
+        </div>
+        <div class="menu">
+            <a href="#">home</a>
+            <a href="#">home</a>
+            <a href="#">home</a>
+            <a href="#">home</a>
+            <a href="#">home</a>
+            <a href="#">home</a>
+        </div>
+        <section class="normal" id="section-">
+            <h2 id="浮动">浮动</h2>
+            <p>
+                <strong>浮动特性 </strong>
+            </p>
+            <p>1、浮动元素有左浮动(float:left)和右浮动(float:right)两种    </p>
+            <p>2、浮动的元素会向左或向右浮动，碰到父元素边界、其他元素才停下来  </p>
+            <p>3、相邻浮动的块元素可以并在一行，超出父级宽度就换行  </p>
+            <p>4、浮动让行内元素或块元素自动转化为行内块元素(此时不会有行内块元素间隙问题)  </p>
+            <p>5、浮动元素后面没有浮动的元素会占据浮动元素的位置，没有浮动的元素内的文字会避开浮动的元素，形成文字饶图的效果    </p>
+            <p>6、父元素如果没有设置尺寸(一般是高度不设置)，父元素内整体浮动的元素无法撑开父元素，父元素需要清除浮动  </p>
+            <p>7、浮动元素之间没有垂直margin的合并  </p>
+            <p>
+                <strong>清除浮动 </strong>
+            </p>
+            <ul>
+                <li>父级上增加属性overflow：hidden</li>
+                <li>在最后一个子元素的后面加一个空的div，给它样式属性 clear:both（不推荐）</li>
+                <li>
+                    使用成熟的清浮动样式类，clearfix  
+                    
+                    
+                    <pre>
+                        <code>.clearfix:after,.clearfix:before{ content: "";display: table;}
+.clearfix:after{ clear:both;}
+.clearfix{zoom:1;}
+</code>
+                    </pre>
+                    清除浮动的使用方法：  
+                    
+                    
+                    <pre>
+                        <code>.con2{... overflow:hidden}
+或者
+&lt;div class="con2 clearfix"&gt;</code>
+                    </pre>
+                </li>
+            </ul>
+        </section>
+        <section class="normal" id="section-">
+            <h2 id="定位">定位</h2>
+            <p>
+                <strong>文档流 </strong>
+                <br>文档流，是指盒子按照html标签编写的顺序依次从上到下，从左到右排列，块元素占一行，行内元素在一行之内从左到右排列，先写的先排列，后写的排在后面，每个盒子都占据自己的位置。
+            
+            </p>
+            <p>
+                <strong>关于定位 </strong>
+                <br>我们可以使用css的position属性来设置元素的定位类型，postion的设置项如下：  
+            
+            </p>
+            <ul>
+                <li>
+                    <p>relative 生成相对定位元素，元素所占据的文档流的位置保留，元素本身相对自身原位置进行偏移。   </p>
+                </li>
+                <li>
+                    <p>absolute 生成绝对定位元素，元素脱离文档流，不占据文档流的位置，可以理解为漂浮在文档流的上方，相对于上一个设置了定位的父级元素来进行定位，如果找不到，则相对于body元素进行定位。  </p>
+                </li>
+                <li>
+                    <p>fixed 生成固定定位元素，元素脱离文档流，不占据文档流的位置，可以理解为漂浮在文档流的上方，相对于浏览器窗口进行定位。  </p>
+                </li>
+                <li>
+                    <p>static 默认值，没有定位，元素出现在正常的文档流中，相当于取消定位属性或者不设置定位属性。  </p>
+                </li>
+                <li>
+                    <p>inherit 从父元素继承 position 属性的值。</p>
+                </li>
+            </ul>
+            <p>
+                <strong>定位元素的偏移 </strong>
+                <br>定位的元素还需要用left、right、top或者bottom来设置相对于参照元素的偏移值。
+            
+            </p>
+            <p>
+                <strong>定位元素层级 </strong>
+                <br>定位元素是浮动的正常的文档流之上的，可以用z-index属性来设置元素的层级
+            
+            </p>
+            <p>伪代码如下:  </p>
+            <pre>
+                <code>.box01{
+    ......
+    position:absolute;  /* 设置了绝对定位 */
+    left:200px;            /* 相对于参照元素左边向右偏移200px */
+    top:100px;          /* 相对于参照元素顶部向下偏移100px */
+    z-index:10          /* 将元素层级设置为10 */
+}
+</code>
+            </pre>
+            <p>
+                <strong>定位元素特性 </strong>
+                <br>绝对定位和固定定位的块元素和行内元素会自动转化为行内块元素
+            
+            </p>
+        </section>
+        <section class="normal" id="section-">
+            <h2 id="background属性">background属性</h2>
+            <p>
+                <strong>属性解释 </strong>
+                <br>background属性是css中应用比较多，且比较重要的一个属性，它是负责给盒子设置背景图片和背景颜色的，background是一个复合属性，它可以分解成如下几个设置项：  
+            </p>
+            <ul>
+                <li>background-color 设置背景颜色</li>
+                <li>background-image 设置背景图片地址</li>
+                <li>background-repeat 设置背景图片如何重复平铺</li>
+                <li>background-position 设置背景图片的位置</li>
+                <li>background-attachment 设置背景图片是固定还是随着页面滚动条滚动</li>
+            </ul>
+            <p>实际应用中，我们可以用background属性将上面所有的设置项放在一起，而且也建议这么做，这样做性能更高，而且兼容性更好，比如：“background: #00FF00 url(bgimage.gif) no-repeat left center fixed”，这里面的“#00ff00”是设置background-color；“url(bgimage.gif)”是设置background-image；“no-repeat”是设置background-repeat；“left center”是设置background-position；“fixed”是设置background-attachment，各个设置项用空格隔开，有的设置项不写也是可以的，它会使用默认值。</p>
+        </section>
+    </body>
+</html>

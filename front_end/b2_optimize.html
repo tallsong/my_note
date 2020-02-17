@@ -1,0 +1,58 @@
+<section class="normal" id="section-">
+    <h2 id="前端性能优化">前端性能优化</h2>
+    <p>从用户访问资源到资源完整的展现在用户面前的过程中，通过技术手段和优化策略，缩短每个步骤的处理时间从而提升整个资源的访问和呈现速度。网站的性能直接会影响到用户的数量，所有前端性能优化很重要。</p>
+    <p>前端性能优化分为如下几个方面：</p>
+    <h3 id="一、代码部署：">一、代码部署：</h3>
+    <p>
+        1、代码的压缩与合并<br>
+        2、图片、js、css等静态资源使用和主站不同域名地址存储，从而使得在传输资源时不会带上不必要的cookie信息。<br>
+        3、使用内容分发网络 CDN<br>
+        4、为文件设置Last-Modified、Expires和Etag<br>
+        5、使用GZIP压缩传送<br>
+        6、权衡DNS查找次数(使用不同域名会增加DNS查找)<br>7、避免不必要的重定向(加"/")  
+    
+    </p>
+    <h3 id="二、编码">二、编码</h3>
+    <h4 id="html：">html：</h4>
+    <p>
+        1、使用结构清晰，简单，语义化标签<br>
+        2、避免空的src和href<br>3、不要在HTML中缩放图片   
+    
+    </p>
+    <h4 id="css：">css：</h4>
+    <p>
+        1、精简css选择器<br>
+        2、把CSS放到顶部<br>
+        3、避免@import方式引入样式<br>
+        4、css中使用base64图片数据取代图片文件，减少请求数，在线转base64网站：<a href="http://tool.css-js.com/base64.html" target="_blank">http://tool.css-js.com/base64.html</a>
+        <br>
+        5、使用css动画来取代javascript动画<br>
+        6、使用字体图标<br>
+        7、使用css sprite(雪碧图)<br>
+        8、使用svg图形<br>9、避免使用CSS表达式  
+    
+    </p>
+    <pre>
+        <code>body{
+ background-color: expression( (new Date()).getSeconds()%2 ? "#B8D4FF" : "#F08A00" );  
+}
+</code>
+    </pre>
+    <p>10、避免使用css滤镜  </p>
+    <h4 id="javascript：">javascript：</h4>
+    <p>
+        1、减少引用库的个数<br>
+        2、使用requirejs或seajs异步加载js<br>
+        3、JS放到页面底部引入<br>
+        4、避免全局查找<br>
+        5、使用原生方法<br>
+        6、用switch语句代替复杂的if else语句<br>
+        7、减少语句数，比如说多个变量声明可以写成一句<br>
+        8、使用字面量表达式来初始化数组或者对象<br>
+        9、使用innerHTML取代复杂的元素注入<br>
+        10、使用事件代理(事件委托)<br>
+        11、避免多次访问dom选择集<br>
+        12、高频触发事件设置使用函数节流<br>13、使用Web Storage缓存数据 
+    
+    </p>
+</section>

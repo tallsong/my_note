@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta chatset="utf-8">
+	<title>Document</title>
+
+
+<body>
+<section class="normal" id="section-">
+                    
+                        <h2 id="数组及操作方法">数组及操作方法</h2>
+<p>数组就是一组数据的集合，javascript中，数组里面的数据可以是不同类型的。</p>
+<p><strong> 定义数组的方法 </strong>  </p>
+<pre><code>//对象的实例创建
+var aList = new Array(1,2,3);
+
+//直接量创建
+var aList2 = [1,2,3,'asd'];
+</code></pre><p><strong> 操作数组中数据的方法 </strong><br>1、获取数组的长度：aList.length;</p>
+<pre><code>var aList = [1,2,3,4];
+alert(aList.length); // 弹出4
+</code></pre><p>2、用下标操作数组的某个数据：aList[0]; </p>
+<pre><code>var aList = [1,2,3,4];
+alert(aList[0]); // 弹出1
+</code></pre><p>3、join()  将数组成员通过一个分隔符合并成字符串  </p>
+<pre><code>var aList = [1,2,3,4];
+alert(aList.join('-')); // 弹出 1-2-3-4
+</code></pre><p>4、push() 和 pop() 从数组最后增加成员或删除成员  </p>
+<pre><code>var aList = [1,2,3,4];
+aList.push(5);
+alert(aList); //弹出1,2,3,4,5
+aList.pop();
+alert(aList); // 弹出1,2,3,4
+</code></pre><p>5、unshift()和 shift()  从数组前面增加成员或删除成员  </p>
+<pre><code>var aList = [1,2,3,4];
+aList.unshift(5);
+alert(aList); //弹出5,1,2,3,4
+aList.shift();
+alert(aList); // 弹出1,2,3,4
+</code></pre><p>6、reverse() 将数组反转  </p>
+<pre><code>var aList = [1,2,3,4];
+aList.reverse();
+alert(aList);  // 弹出4,3,2,1
+</code></pre><p>7、indexOf() 返回数组中元素第一次出现的索引值</p>
+<pre><code>var aList = [1,2,3,4,1,3,4];
+alert(aList.indexOf(1));
+</code></pre><p>8、splice() 在数组中增加或删除成员</p>
+<pre><code>var aList = [1,2,3,4];
+aList.splice(2,1,7,8,9); //从第2个元素开始，删除1个元素，然后在此位置增加'7,8,9'三个元素
+alert(aList); //弹出 1,2,7,8,9,4
+</code></pre><p><strong> 多维数组 </strong><br>多维数组指的是数组的成员也是数组的数组。  </p>
+<pre><code>var aList = [[1,2,3],['a','b','c']];
+
+alert(aList[0][1]); //弹出2;
+</code></pre><p>批量操作数组中的数据，需要用到循环语句</p>
+
+                    
+                    </section>
+                    <section class="normal" id="section-">
+                    
+                        <h2 id="javascript组成">Javascript组成</h2>
+<p>1、ECMAscript    javascript的语法（变量、函数、循环语句等语法）<br>2、DOM   文档对象模型 操作html和css的方法<br>3、BOM   浏览器对象模型 操作浏览器的一些方法  </p>
+
+                    
+                    </section>
+                    <section class="normal" id="section-">
+                    
+                        <h2 id="字符串处理方法">字符串处理方法</h2>
+<p>1、字符串合并操作：“ + ”   </p>
+<pre><code>var iNum01 = 12;
+var iNum02 = 24;
+var sNum03 = '12';
+var sTr = 'abc';
+alert(iNum01+iNum02);  //弹出36
+alert(iNum01+sNum03);  //弹出1212 数字和字符串相加等同于字符串相加
+alert(sNum03+sTr);     // 弹出12abc
+</code></pre><p>2、parseInt() 将数字字符串转化为整数  </p>
+<pre><code>var sNum01 = '12';
+var sNum02 = '24';
+var sNum03 = '12.32';
+alert(sNum01+sNum02);  //弹出1224
+alert(parseInt(sNum01)+parseInt(sNum02))  //弹出36
+alert(sNum03)   //弹出数字12 将字符串小数转化为数字整数
+</code></pre><p>3、parseFloat() 将数字字符串转化为小数  </p>
+<pre><code>var sNum03 = '12.32'
+alert(parseFloat(sNum03));  //弹出 12.32 将字符串小数转化为数字小数
+</code></pre><p>4、split() 把一个字符串分隔成字符串组成的数组  </p>
+<pre><code>var sTr = '2017-4-22';
+var aRr = sTr.split("-");
+var aRr2= sTr.split("");
+
+alert(aRr);  //弹出['2017','4','2']
+alert(aRr2);  //弹出['2','0','1','7','-','4','-','2','2']
+</code></pre><p>5、charAt() 获取字符串中的某一个字符  </p>
+<pre><code>var sId = "#div1";
+var sTr = sId.charAt(0);
+alert(sTr); //弹出 #
+</code></pre><p>6、indexOf() 查找字符串是否含有某字符  </p>
+<pre><code>var sTr = "abcdefgh";
+var iNum = sTr.indexOf("c");
+alert(iNum); //弹出2
+</code></pre><p>7、substring() 截取字符串  用法： substring(start,end)（不包括end） </p>
+<pre><code>var sTr = "abcdefghijkl";
+var sTr2 = sTr.substring(3,5);
+var sTr3 = sTr.substring(1);
+
+alert(sTr2); //弹出 de
+alert(sTr3); //弹出 bcdefghijkl
+</code></pre><p>8、toUpperCase() 字符串转大写  </p>
+<pre><code>var sTr = "abcdef";
+var sTr2 = sTr.toUpperCase();
+alert(sTr2); //弹出ABCDEF
+</code></pre><p>9、toLowerCase() 字符串转小写  </p>
+<pre><code>var sTr = "ABCDEF";
+var sTr2 = sTr.toLowerCase();
+alert(sTr2); //弹出abcdef
+</code></pre><p><strong> 字符串反转 </strong>  </p>
+<pre><code>var str = 'asdfj12jlsdkf098';
+var str2 = str.split('').reverse().join('');
+
+alert(str2);
+</code></pre>
+                    
+                    </section>
+           <section class="normal" id="section-">
+                    
+                        <h2 id="字符串处理方法">字符串处理方法</h2>
+<p>1、字符串合并操作：“ + ”   </p>
+<pre><code>var iNum01 = 12;
+var iNum02 = 24;
+var sNum03 = '12';
+var sTr = 'abc';
+alert(iNum01+iNum02);  //弹出36
+alert(iNum01+sNum03);  //弹出1212 数字和字符串相加等同于字符串相加
+alert(sNum03+sTr);     // 弹出12abc
+</code></pre><p>2、parseInt() 将数字字符串转化为整数  </p>
+<pre><code>var sNum01 = '12';
+var sNum02 = '24';
+var sNum03 = '12.32';
+alert(sNum01+sNum02);  //弹出1224
+alert(parseInt(sNum01)+parseInt(sNum02))  //弹出36
+alert(sNum03)   //弹出数字12 将字符串小数转化为数字整数
+</code></pre><p>3、parseFloat() 将数字字符串转化为小数  </p>
+<pre><code>var sNum03 = '12.32'
+alert(parseFloat(sNum03));  //弹出 12.32 将字符串小数转化为数字小数
+</code></pre><p>4、split() 把一个字符串分隔成字符串组成的数组  </p>
+<pre><code>var sTr = '2017-4-22';
+var aRr = sTr.split("-");
+var aRr2= sTr.split("");
+
+alert(aRr);  //弹出['2017','4','2']
+alert(aRr2);  //弹出['2','0','1','7','-','4','-','2','2']
+</code></pre><p>5、charAt() 获取字符串中的某一个字符  </p>
+<pre><code>var sId = "#div1";
+var sTr = sId.charAt(0);
+alert(sTr); //弹出 #
+</code></pre><p>6、indexOf() 查找字符串是否含有某字符  </p>
+<pre><code>var sTr = "abcdefgh";
+var iNum = sTr.indexOf("c");
+alert(iNum); //弹出2
+</code></pre><p>7、substring() 截取字符串  用法： substring(start,end)（不包括end） </p>
+<pre><code>var sTr = "abcdefghijkl";
+var sTr2 = sTr.substring(3,5);
+var sTr3 = sTr.substring(1);
+
+alert(sTr2); //弹出 de
+alert(sTr3); //弹出 bcdefghijkl
+</code></pre><p>8、toUpperCase() 字符串转大写  </p>
+<pre><code>var sTr = "abcdef";
+var sTr2 = sTr.toUpperCase();
+alert(sTr2); //弹出ABCDEF
+</code></pre><p>9、toLowerCase() 字符串转小写  </p>
+<pre><code>var sTr = "ABCDEF";
+var sTr2 = sTr.toLowerCase();
+alert(sTr2); //弹出abcdef
+</code></pre><p><strong> 字符串反转 </strong>  </p>
+<pre><code>var str = 'asdfj12jlsdkf098';
+var str2 = str.split('').reverse().join('');
+
+alert(str2);
+</code></pre>
+<h2 id="定时器">定时器</h2><p><strong>定时器在javascript中的作用</strong><br>1、制作动画<br>2、异步操作<br>3、函数缓冲与节流  </p>
+                    
+                    </section>
+                    <section class="normal" id="section-">
+                    
+                        <h2 id="常用内置对象">常用内置对象</h2>
+<p>1、document  </p>
+<pre><code>document.getElementById //通过id获取元素
+document.getElementsByTagName //通过标签名获取元素
+document.referrer  //获取上一个跳转页面的地址(需要服务器环境)
+</code></pre><p>2、location  </p>
+<pre><code>window.location.href  //获取或者重定url地址
+window.location.search //获取地址参数部分
+window.location.hash //获取页面锚点或者叫哈希值
+</code></pre>
+<p>3、Math  </p>
+<pre><code>Math.random 获取0-1的随机数
+Math.floor 向下取整
+Math.ceil 向上取整
+</code></pre>
+
+                    
+                    </section>
+</body>
+
+</html>

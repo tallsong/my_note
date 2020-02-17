@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta chat set="utf-8">
+        <title>Document</title>
+        <style type="text/css">
+            body {
+                margin: 0;
+            }
+
+            .box {
+                width: 202px;
+                height: 205px;
+                background-color: gold;
+                /*margin: 50px auto 100px auto;*/
+                margin: 50px auto 100px;
+            }
+
+            .box div {
+                border: 1px solid green;
+                margin-top: -1px;
+                width: 200px;
+                height: 50px;
+            }
+
+            body {
+                background: #f2f2f2;
+                color: #333;
+            }
+
+            @media (prefers-color-scheme: dark) {
+                body {
+                    background: #222;
+                    color: #eee;
+                }
+            }
+            .box1:hover{color:red}
+.box2:before{content:'行首文字';}
+.box3:after{content:'行尾文字';}
+        </style>
+    </head>
+    <body>
+        <div class="box1">....</div>
+        <div class="box2">....</div>
+        <div class="box3">....</div>
+        <video src="D:\迅雷下载\杀死伊芙.Killing.Eve.S02E03.中英字幕.WEB.720P-ANON.mp4" controls></video>
+        <div class="box">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <section class="normal" id="section-">
+            <h2 id="css元素溢出">css元素溢出</h2>
+            <p>当子元素的尺寸超过父元素的尺寸时，需要设置父元素显示溢出的子元素的方式，设置的方法是通过overflow属性来设置。</p>
+            <p>
+                <strong>overflow的设置项： </strong>
+                <br>
+                1、visible    默认值。内容不会被修剪，会呈现在元素框之外。<br>
+                2、hidden    内容会被修剪，并且其余内容是不可见的，此属性还有清除浮动、清除margin-top塌陷的功能。<br>
+                3、scroll    内容会被修剪，但是浏览器会显示滚动条以便查看其余的内容。<br>
+                4、auto        如果内容被修剪，则浏览器会显示滚动条以便查看其余的内容。<br>5、inherit    规定应该从父元素继承 overflow 属性的值。 
+            
+            </p>
+            <p>
+                元素溢出示例：<br>
+                <img src="./images/overflow.jpg" alt="课堂练习示例图片">
+            </p>
+        </section>
+        <CANVAS ID="mc" width="890" height="508" style="border: none;"></CANVAS>
+        <script type="text/javascript">
+            var canvas = document.getElementById('mc');
+            var ctx = canvas.getContext('2d');
+            for (var i = 0; i < 20; i++) {
+                ctx.beginPath();
+                ctx.arc(i * 25, i * 25, (i + 1) * 8, 0, Math.PI * 2, true);
+                ctx.closePath();
+                ctx.fillStyle = 'rgba(255,0,255,' + (20 - i) * 0.1 + ')';
+                ctx.fill();
+                console.log("asasdad")
+            }
+        </script>
+    </body>
+</html>

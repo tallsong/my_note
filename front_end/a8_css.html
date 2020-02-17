@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta chatset="utf-8">
+        <title>Document</title>
+        <style type="text/css">
+            .book .book-body .page-wrapper .page-inner section.normal {
+                display: block;
+                word-wrap: break-word;
+                overflow: hidden;
+                color: #333;
+                line-height: 1.7;
+                text-size-adjust: 100%;
+                -ms-text-size-adjust: 100%;
+                -webkit-text-size-adjust: 100%;
+                -moz-text-size-adjust: 100%
+            }
+
+            .box {
+                border: 1px solid #0000;
+                margin: 50px auto 0;
+                font-size: 0;
+            }
+
+            .box a {
+                background-color: gold;
+                padding: 0 10px;
+                font-size: 16px;
+                display: inline-block;
+            }
+        </style>
+    </head>
+    <body>
+        <section class="normal" id="section-">
+            <h2 id="css权重">CSS权重</h2>
+            <p>CSS权重指的是样式的优先级，有两条或多条样式作用于一个元素，权重高的那条样式对元素起作用,权重相同的，后写的样式会覆盖前面写的样式。</p>
+            <h3 id="权重的等级">权重的等级</h3>
+            <p>可以把样式的应用方式分为几个等级，按照等级来计算权重  </p>
+            <p>
+                1、!important，加在样式属性值后，权重值为 10000<br>
+                2、内联样式，如：style=””，权重值为1000<br>
+                3、ID选择器，如：#content，权重值为100<br>
+                4、类，伪类和属性选择器，如： content、:hover 权重值为10<br>
+                5、标签选择器和伪元素选择器，如：div、p、:before 权重值为1<br>6、通用选择器（*）、子选择器（&gt;）、相邻选择器（+）、同胞选择器（~）、权重值为0  
+            
+            </p>
+        </section>
+        <section class="normal" id="section-">
+            <h2 id="css3新增选择器">CSS3新增选择器</h2>
+            <p>1、E:nth-child(n)：匹配元素类型为E且是父元素的第n个子元素  </p>
+            \
+            
+            <p>
+                2、E:first-child：匹配元素类型为E且是父元素的第一个子元素<br>
+                3、E:last-child：匹配元素类型为E且是父元素的最后一个子元素<br>
+                4、E &gt;F  E元素下面第一层子集<br>
+                5、E ~ F  E元素后面的兄弟元素<br>6、E + F  紧挨着的后面的兄弟元素  
+            
+            </p>
+            <p>
+                属性选择器：<br>1、E[attr]          含有attr属性的元素  
+            
+            </p>
+            <pre>
+                <code>&lt;style type="text/css"&gt;div[data-attr='ok']{
+        color:red;
+    }
+&lt;/style &gt;......
+&lt;div data-attr="ok"&gt;这是一个div元素&lt;/div &gt;</code>
+            </pre>
+            <p>
+                2、E[attr='ok']     含有attr属性的元素且它的值为“ok”<br>
+                3、E[attr^='ok']    含有attr属性的元素且它的值的开头含有“ok”<br>
+                4、E[attr$='ok']    含有attr属性的元素且它的值的结尾含有“ok”<br>5、E[attr*='ok']    含有attr属性的元素且它的值中含有“ok”  
+            
+            </p>
+        </section>
+        <section class="normal" id="section-">
+            <h2 id="css3-transition动画">CSS3 transition动画</h2>
+            <p>
+                1、transition-property  设置过渡的属性，比如：width  height   background-color<br>
+                2、transition-duration  设置过渡的时间，比如：1s  500ms<br>
+                3、transition-timing-function  设置过渡的运动方式，常用有 linear(匀速)|ease(缓冲运动)<br>
+                4、transition-delay 设置动画的延迟<br>5、transition: property duration timing-function delay 同时设置四个属性
+            
+            </p>
+        </section>
+        <section class="normal" id="section-">
+            <h2 id="css3-transform变换">CSS3 transform变换</h2>
+            <p>
+                1、translate(x,y) 设置盒子位移<br>
+                2、scale(x,y)  设置盒子缩放<br>
+                3、rotate(deg) 设置盒子旋转<br>
+                4、skew(x-angle,y-angle) 设置盒子斜切<br>
+                5、perspective  设置透视距离<br>
+                6、transform-style  flat | preserve-3d 设置盒子是否按3d空间显示<br>
+                7、translateX、translateY、translateZ  设置三维移动<br>
+                8、rotateX、rotateY、rotateZ  设置三维旋转<br>
+                9、scaleX、scaleY、scaleZ  设置三维缩放<br>
+                10、tranform-origin  设置变形的中心点<br>11、backface-visibility 设置盒子背面是否可见  
+            
+            </p>
+            <h3 id="举例：（翻面效果）">举例：（翻面效果）</h3>
+            <pre>
+                <code>&lt;!DOCTYPE html &gt;&lt;html lang="en"&gt;&lt;head &gt;&lt;meta charset="UTF-8"&gt;&lt;title &gt;翻面&lt;/title &gt;&lt;style type="text/css"&gt;.box{
+            width:300px;
+            height:272px;
+            margin:50px auto 0;
+            transform-style:preserve-3d;
+            position:relative;            
+        }
+        .box .pic{
+            width:300px;
+            height:272px;
+            position:absolute;
+            background-color:cyan;
+            left:0;
+            top:0;
+            transform:perspective(800px) rotateY(0deg);
+            backface-visibility:hidden;
+            transition:all 500ms ease;
+        }
+        .box .back_info{
+            width:300px;
+            height:272px;
+            text-align:center;
+            line-height:272px;
+            background-color:gold;
+            position:absolute;
+            left:0;
+            top:0;
+            transform:rotateY(180deg);
+            backface-visibility:hidden;
+            transition:all 500ms ease;            
+        }
+        .box:hover .pic{
+            transform:perspective(800px) rotateY(180deg);
+        }
+        .box:hover .back_info{
+            transform:perspective(800px) rotateY(0deg);
+        }
+    &lt;/style &gt;&lt;/head &gt;&lt;body &gt;&lt;div class="box"&gt;&lt;div class="pic"&gt;&lt;img src="images/location_bg.jpg"&gt;&lt;/div &gt;&lt;div class="back_info"&gt;背面文字说明&lt;/div &gt;&lt;/div &gt;&lt;/body &gt;&lt;/html &gt;</code>
+            </pre>
+        </section>
+        <section class="normal" id="section-">
+            <h2 id="css3-animation动画">CSS3 animation动画</h2>
+            <p>
+                1、@keyframes 定义关键帧动画<br>
+                2、animation-name 动画名称<br>
+                3、animation-duration  动画时间<br>
+                4、animation-timing-function  动画曲线   linear(匀速)|ease(缓冲)|steps(步数)<br>
+                5、animation-delay  动画延迟<br>
+                6、animation-iteration-count  动画播放次数  n|infinite<br>
+                7、animation-direction  动画结束后是否反向还原  normal|alternate<br>
+                8、animation-play-state  动画状态  paused(停止)|running(运动)<br>
+                9、animation-fill-mode 动画前后的状态  none(缺省)|forwards(结束时停留在最后一帧)|backwards(开始时停留在定义的开始帧)|both(前后都应用)<br>10、animation:name  duration  timing-function  delay  iteration-count  direction;同时设置多个属性  
+            
+            </p>
+        </section>
+        <section class="normal" id="section-">
+            <h2 id="html5新增标签">HTML5新增标签</h2>
+            <p>
+                <strong>新增语义标签 </strong>
+            </p>
+            <p>
+                1、&lt;header &gt;页面头部、页眉<br>
+                2、&lt;nav &gt;页面导航<br>
+                3、&lt;article &gt;一篇文章<br>
+                4、&lt;section &gt;文章中的章节<br>
+                5、&lt;aside &gt;侧边栏<br>6、&lt;footer &gt;页面底部、页脚  
+            </p>
+            <p>
+                <strong>音频视频 </strong>
+                <br>
+                1、&lt;audio &gt;<br>2、&lt;video &gt;
+            </p>
+            <p>PC端兼容h5的新标签的方法，在页面中引入以下js文件:</p>
+            <pre>
+                <code>&lt;script type="text/javascript" src="//cdn.bootcss.com/html5shiv/r29/html5.js"&gt;&lt;/script &gt;</code>
+            </pre>
+        </section>
+        <section class="normal" id="section-">
+            <h2 id="html5-新增表单控件">HTML5 新增表单控件</h2>
+            <p>新增类型：网址 邮箱 日期 时间 星期 数量 范围 电话 颜色 搜索</p>
+            <pre>
+                <code>&lt;label &gt;网址:&lt;/label &gt;&lt;input type="url" name="" required &gt;&lt;br &gt;&lt;br &gt;&lt;label &gt;邮箱:&lt;/label &gt;&lt;input type="email" name="" required &gt;&lt;br &gt;&lt;br &gt;&lt;label &gt;日期:&lt;/label &gt;&lt;input type="date" name=""&gt;&lt;br &gt;&lt;br &gt;&lt;label &gt;时间:&lt;/label &gt;&lt;input type="time" name=""&gt;&lt;br &gt;&lt;br &gt;&lt;label &gt;星期:&lt;/label &gt;&lt;input type="week" name=""&gt;&lt;br &gt;&lt;br &gt;&lt;label &gt;数量:&lt;/label &gt;&lt;input type="number" name=""&gt;&lt;br &gt;&lt;br &gt;&lt;label &gt;范围:&lt;/label &gt;&lt;input type="range" name=""&gt;&lt;br &gt;&lt;br &gt;&lt;label &gt;电话:&lt;/label &gt;&lt;input type="tel" name=""&gt;&lt;br &gt;&lt;br &gt;&lt;label &gt;颜色:&lt;/label &gt;&lt;input type="color" name=""&gt;&lt;br &gt;&lt;br &gt;&lt;label &gt;搜索:&lt;/label &gt;&lt;input type="search" name=""&gt;&lt;br &gt;&lt;br &gt;</code>
+            </pre>
+            <p>
+                新增常用表单控件属性：<br>
+                1、placeholder 设置文本框默认提示文字<br>
+                2、autofocus 自动获得焦点<br>3、autocomplete 联想关键词  
+            </p>
+        </section>
+        <section class="normal" id="section-">
+            <h2 id="常用css列表">常用css列表</h2>
+            <ul>
+                <li>
+                    <p>color 设置文字的颜色，如： color:red;</p>
+                </li>
+                <li>
+                    <p>font-size 设置文字的大小，如：font-size:12px;</p>
+                </li>
+                <li>
+                    <p>font-family 设置文字的字体，如：font-family:'微软雅黑';</p>
+                </li>
+                <li>
+                    <p>font-style 设置字体是否倾斜，如：font-style:'normal';  设置不倾斜，font-style:'italic';设置文字倾斜</p>
+                </li>
+                <li>
+                    <p>font-weight 设置文字是否加粗，如：font-weight:bold; 设置加粗 font-weight:normal 设置不加粗</p>
+                </li>
+                <li>
+                    <p>line-height 设置文字的行高，设置行高相当于在每行文字的上下同时加间距，
+如：line-height:24px;</p>
+                </li>
+                <li>
+                    <p>font 同时设置文字的几个属性，写的顺序有兼容问题，建议按照如下顺序写：
+font：是否加粗 字号/行高 字体；如： font:normal 12px/36px '微软雅黑';</p>
+                </li>
+                <li>
+                    <p>text-decoration 设置文字的下划线，如：text-decoration:none; 将文字下划线去掉</p>
+                </li>
+                <li>
+                    <p>text-indent 设置文字首行缩进，如：text-indent:24px; 设置文字首行缩进24px</p>
+                </li>
+                <li>
+                    <p>text-align 设置文字水平对齐方式，如text-align:center 设置文字水平居中</p>
+                </li>
+                <li>
+                    <p>text-overflow 设置一行文字宽度超过容器宽度时的显示方式，如：text-overflow:clip 将多出的文字裁剪掉 text-overflow:ellipsis 将多出的文字显示成省略号  </p>
+                </li>
+                <li>
+                    <p>white-space 一般用来设置文本不换行，如：white-space:nowrap 设置文本不换行 一般与text-overflow和overflow属性配合使用来让一行文字超出宽度时显示省略号  </p>
+                </li>
+                <li>
+                    <p>list-style 一般用来设置去掉ul或者ol列表中的小圆点或数字 如：list-style:none</p>
+                </li>
+                <li>
+                    <p>width 设置盒子内容的宽度，如： width：100px;</p>
+                </li>
+                <li>
+                    <p>height 设置盒子内容的高度，如： height：100px;</p>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    border-top 设置盒子顶部边框的三个属性 如：border-top:5px solid red;设置盒子顶部边框为3像素宽的红色的实线，详细设置说明：<a href="../../02/mds/section01.html">盒子模型</a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    border-left 设置盒子左边边框的三个属性 如：border-left:3px dotted red;设置盒子左边边框为3像素宽的红色的点线，详细设置说明：<a href="../../02/mds/section01.html">盒子模型</a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    border-right 设置盒子右边边框的三个属性 如：border-right:2px dashed red;设置盒子右边框为2像素宽的红色的虚线，详细设置说明：<a href="../../02/mds/section01.html">盒子模型</a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    border-bottom 设置盒子底部边框的三个属性 如：border-bottom:1px solid red;设置盒子底部边框为1像素宽的红色的实线，详细设置说明：<a href="../../02/mds/section01.html">盒子模型</a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <p>
+                        border 同时设置盒子的四个边框，如果四个边的样式统一就使用它 如：border:1px solid #000 设置盒子四个边都是1像素宽的黑色实线，详细设置说明：<a href="../../02/mds/section01.html">盒子模型</a>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        padding 设置盒子四个边的内边距 如：padding:10px 20px 30px 40px 分别设置盒子上边(10px)、右边(20px)、下边(30px)、左边(40px)的内边距(顺时针)，详细设置说明：<a href="../../02/mds/section01.html">盒子模型</a>
+                    </p>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    margin 设置盒子四个边的外边距 如：margin:10px 20px 30px 40px 分别设置盒子上边(10px)、右边(20px)、下边(30px)、左边(40px)的外边距(顺时针)，详细设置说明：<a href="../../02/mds/section01.html">盒子模型</a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <p>
+                        overflow 设置当子元素的尺寸超过父元素的尺寸时，盒子及子元素的显示方式 如：overflow:hidden 超出的子元素被裁切，详细设置说明：<a href="../../02/mds/section004.html">元素溢出</a>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        display 设置盒子的显示类型及隐藏，如：display:block 将盒子设置为以块元素显示
+display:none 将元素隐藏，详细设置说明：<a href="../../02/mds/section02.html">元素类型</a>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        float 设置元浮动 如：float:left 设置左浮动 float:right 设置右浮动，详细设置说明：<a href="../../02/mds/section03.html">元素浮动</a>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        clear 在盒子两侧清除浮动 如：clear:both 在盒子两侧都不允许浮动，详细设置说明：<a href="../../02/mds/section03.html">元素浮动</a>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        position 设置元素定位 如：position:relative 设置元素相对定位，详细设置说明：<a href="../../02/mds/section04.html">元素定位</a>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        background 设置元素的背景色和背景图片，如：background:url(bg.jpg) cyan;设置盒子的背景图片为bg.jpg，背景色为cyan，详细设置说明：<a href="../../02/mds/section05.html">元素背景</a>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        background-size 设置盒子背景图的尺寸，如：background-size:30px 40px;设置背景图的尺寸宽为30px，高为40px，这个属性不能合到background属性中，详细设置说明：<a href="section05.html">retina屏适配</a>
+                    </p>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <p>opacity 设置元素整体透明度，一般为了兼容需要加上filter属性设置 如：opacity:0.1;filter:alpha(opacity=10)</p>
+                </li>
+                <li>
+                    <p>cursor 设置鼠标悬停在元素上时指针的形状 如：cursor:pointer 设置为手型</p>
+                </li>
+                <li>
+                    <p>outline 设置文本输入框周围凸显的蓝色的线，一般是设为没有 如：outline:none</p>
+                </li>
+                <li>
+                    <p>
+                        border-radius 设置盒子的圆角 如：border-radius:10px 设置盒子的四个角为10px半径的圆角，详细设置说明：<a href="../../06-07/mds/section02.html">css圆角</a>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        box-shadow 设置盒子的阴影，如：box-shadow:10px 10px 5px 2px pink;设置盒子有粉色的阴影，详细设置说明：<a href="../../06-07/mds/section02.html">css阴影</a>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        transition 设置盒子的过渡动画，如：transition:all 1s ease;设置元素过渡动画为1秒完成，所有变动的属性都做动画，详细设置说明：<a href="../../06-07/mds/section03.html">过渡动画</a>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        animation 设置盒子的关键帧动画，详细设置说明：<a href="../../06-07/mds/section05.html">关键帧动画</a>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        transform 设置盒子的位移、旋转、缩放、斜切等变形，如：transform:rotate(45deg);设置盒子旋转45度，详细设置说明：<a href="../../06-07/mds/section04.html">元素变形</a>
+                    </p>
+                </li>
+            </ul>
+            <ul>
+                <li>box-sizing 设置盒子的尺寸计算方式，如：box-sizing:border-box 将盒子的尺寸计算方法设置为按边框计算，此时width和height的值就是盒子的实际尺寸</li>
+            </ul>
+            <ul>
+                <li>border-collapse 设置表格边框是否合并，如：border-collapse:collapse，将表格边框合并，这样就可以制作1px边框的表格。</li>
+            </ul>
+        </section>
+    </body>
+</html>

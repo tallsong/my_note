@@ -1177,6 +1177,10 @@ JavaScript 的 Date 对象月份值从 0 开始，牢记 0=1 月，1=2 月，2=3
 ### RegExp
 
 #### 正则表达式基础
+在js中，正则表达式常常用于匹配字符串，它可以实现很多方法无法实现的功能。下面介绍js中正则表达式修饰符（i、g、m）使用。
+通过i修饰符的设置，忽略大小写
+在正则表达式后面加上g修饰符，查找字符串中所有匹配到的字符。
+m修饰符。在正则表达式后面加上m修饰符，可以实现在多行字符中匹配字符，而g修饰符只能实现单行匹配。
 
 `\d` - 数字
 `\w` - 字母或数字
@@ -1670,3 +1674,65 @@ $.fn.<pluginName> = function(options) {
 `_.groupBy([1, 2, 3, 4, 5], (x) => { if(x<3) return 'small'; else return 'big' });`
 
 更多 [underscrore 方法](https://underscorejs.org/)。
+
+
+```javascript
+
+            //alert('hello');
+            //document.getElementById("parameter_list").style.display = "none";
+            var a = 1;
+            console.log(a);
+            console.log(0 / 0);
+            console.log('\u4e2d\u6587');
+            console.log(`this
+                            is
+                    multiline str`);
+            var xiaohong = {
+                name: 'xiaohong',
+                age: 18,
+                'midle-school': 'no.1 school'
+            };
+            console.log(xiaohong['midle-school'])
+            console.log(xiaohong.toString)
+
+
+            var a = ['A', 'B', 'C'];
+            var s = new Set(['A', 'B', 'C']);
+            var m = new Map([[1, 'x'], [2, 'y'], [3, 'z']]);
+            for (var x of a) { // 遍历Array
+                console.log(x);
+            }
+            for (var x of s) { // 遍历Set
+                console.log(x);
+            }
+            for (var x of m) { // 遍历Map
+                console.log(x[0] + '=' + x[1]);
+            }
+            function checkform() {
+                var username = document.getElementById("username");
+                //alert("mog");
+                var md5_pwd = document.getElementById('password');
+                // 把用户输入的明文变为MD5:
+                md5_pwd.value = toMD5(input_pwd.value);
+                alert(username.value);
+                console.log(username.value);
+                return true;
+            }
+            var checkRegisterForm = function () {
+                var r1 = /^[A-Za-z0-9]{3,10}$/;
+                var r2 = /^\w{6-20}$/;
+                var u = document.getElementById("username");
+                var p1 = document.getElementById("password");
+                var p2 = document.getElementById("password-2")
+                if (r1.test(u.value)) {
+                    return false;
+                }
+                if (!r2.test(p1.value) && !r2.test(p2.value)) {
+                    return false;
+                }
+                if (p1.value != p2.value) {
+                    return false;
+                }
+                return true;
+            }
+```

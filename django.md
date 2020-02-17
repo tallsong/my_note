@@ -27,3 +27,13 @@ sqlmigrate 命令接收一个迁移的名称，然后返回对应的 SQL：
 python manage.py sqlmigrate App_name 0001
 
 ```
+
+
+# 遇到Did you install mysqlclient问题[解决方法](https://stackoverflow.com/questions/51062920/pip-install-mysqlclient-error)
+```bash
+pip install --upgrade setuptools
+
+apt install gcc libssl-dev
+```
+
+
