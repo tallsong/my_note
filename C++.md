@@ -1,7 +1,8 @@
-# my_cpp
 
 ***[markdown basic-syntax](https://www.markdownguide.org/basic-syntax/)***
 # 基础知识 
+- C++最好的初始化方式(C++11及以上)：Direct brace initialization.
+- '\n'的性能高于std::cout
 ## C++ 与C的区别
 C++中函数的形参的列表为void表面函数不接受任何参数，这与括号里面空着等效；
 C中函数的形参的列表为void表面函数不接受任何参数，让括号里面空着意外着对是否接受参数保存沉默；

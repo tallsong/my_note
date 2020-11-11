@@ -31,3 +31,7 @@ URL: https://localhost.localdomain:8443/
 User: admin
 Password: 6j0i2d6hq7
 
+
+7-1 7-2 7-5 7-3   192.168.255.140/24 admin
+node1 36 node2 
+node3 38   node4 40

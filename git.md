@@ -534,4 +534,3 @@ git config --global alias.<alias> <fullName>
 ![github-git-cheat-sheet](./img/github-git-cheat-sheet-1.png)
 ![github-git-cheat-sheet](./img/github-git-cheat-sheet-2.png)
 
-celery -A celery_tasks.tasks worker -l info

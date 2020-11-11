@@ -13,7 +13,8 @@ docker run -d -P training/webapp python app.py
 - -P:将容器内部使用的网络端口随机映射到我们使用的主机上。
 
 
-
+- Remove all stopped containers
+`docker rm $(docker ps -a -q)`
 
 
 ## ub下载速度太慢，更新国内源
