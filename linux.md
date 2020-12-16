@@ -40,5 +40,8 @@ nohup celery -A celery_tasks.tasks worker -l info  >> celery.out 2>&1 &
 
 
 
-
+## centos
+-  systemctl restart network 
+service network restart #重启网络服务
+brctl show #校验网络接口
 

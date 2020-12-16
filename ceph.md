@@ -35,3 +35,13 @@ Password: 6j0i2d6hq7
 7-1 7-2 7-5 7-3   192.168.255.140/24 admin
 node1 36 node2 
 node3 38   node4 40
+
+
+# commond
+```bash
+systemctl restart ceph.target # Restart All Ceph Daemons
+```
+
+
+
+https://admin:b7fec6be-97e6-4824-b743-859bdd45ff0b@ceph3:8003/server  or https://admin:b7fec6be-97e6-4824-b743-859bdd45ff0b@ceph3:8003/
