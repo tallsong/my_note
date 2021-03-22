@@ -1,5 +1,5 @@
 - pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
-- pip install -i http://mirrors.aliyun.com/pypi/simple/ some-package
+- pip install -i https://mirrors.aliyun.com/pypi/simple/ some-package
 
 # virtualenv
 ```bash
