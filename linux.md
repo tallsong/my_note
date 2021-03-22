@@ -6,6 +6,14 @@ sudo vim /etc/resolv.conf
 添加nameserver 8.8.8.8
 ```
 
+## shell
+
+- 先使用find命令查找文件, 然后使用grep命令查找哪些文件包含某个字符串
+- find . -name "*.c" | xargs grep -n "main"  //文件多优先
+- find  ./  -size  +1M  -exec ls -l {} \;    //放在缓存中
+- find  ./  -size  +1M  -ok ls -l {} \;
+- grep -rn hello ./
+
 
 
 nohup celery -A celery_tasks.tasks worker -l info  >> celery.out 2>&1 & 
@@ -37,6 +45,8 @@ nohup celery -A celery_tasks.tasks worker -l info  >> celery.out 2>&1 &
 
 
 
+## hardware
+- dmidecode | grep "Product Name"   
 
 
 
@@ -45,3 +55,28 @@ nohup celery -A celery_tasks.tasks worker -l info  >> celery.out 2>&1 &
 service network restart #重启网络服务
 brctl show #校验网络接口
 
+# OS
+- UNIX fork creates a complete copy of the parent process,
+- UNIX has a system call, naturally enough called wait, that pauses the parent until the child finishes,
+crashes, or is terminated
+
+## thread
+```C
+void thread_create(thread, func,arg) 
+// Create a new thread, storing information about it in thread. Concurrently with the calling thread, thread executes the function func with the argument arg
+
+void thread_yield()
+// The calling thread voluntarily gives up the processor to let some other thread(s) run. The scheduler can resume running the calling thread whenever it chooses to do so.
+
+
+int thread_join(thread)
+
+//Wait for thread to finish if it has not already done so; then return the value passed
+//to thread_exit by that thread. Note that thread_join may be called only once for
+//each thread.
+
+
+void thread_exit(ret)
+//Finish the current thread. Store the value ret in the current thread’s data structure.
+//If another thread is already waiting in a call to thread_join, resume it
+```
