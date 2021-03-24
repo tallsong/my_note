@@ -87,7 +87,7 @@ gcc main.c  -L./  -l test2  -I./ -o main2
 - 临时设置LD_LIBRARY_PATH:
 ```bash
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:库路径
-``` 
+```
 - 永久设置, 把export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:库路径, 设置到∼/.bashrc文件中, 然后在执行下列三种办法之一:
 	- 执行. ~/.bashrc使配置文件生效(第一个.后面有一个空格)
 	- 执行source ~/.bashrc配置文件生效
@@ -125,7 +125,7 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:库路径
 
 #### 方法二：显式调用*
 
-​ HANDLE hDll**;** //声明一个dll实例文件句柄 hDll = LoadLibrary**("mydll.dll");** //导入动态链接库 MYFUNC minus_test**;** //创建函数指针 //获取导入函数的函数指针 minus_test = (MYFUNC)GetProcAddress(hDll, "myminus");
+HANDLE hDll**;** //声明一个dll实例文件句柄 hDll = LoadLibrary**("mydll.dll");** //导入动态链接库 MYFUNC minus_test**;** //创建函数指针 //获取导入函数的函数指针 minus_test = (MYFUNC)GetProcAddress(hDll, "myminus");
 ### 特点
 - 动态库把对一些库函数的链接载入推迟到程序运行的时期。
 - 可以实现进程之间的资源共享。（因此动态库也称为共享库）
@@ -166,6 +166,106 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:库路径
 | .i                 | 预处理后的 C 语言文件 |
 | .s                 | 编译后的汇编文件      |
 | .o                 | 编译后的目标文件      |
+
+# makefile
+
+## 基本规则
+
+```makefile
+target: object
+	command
+```
+
+
+
+当前目录下有main.c fun1.c fun2.c sum.c, 根据这个基本规则编写一个简单的makefile文件, 生成可执行文件main.
+
+- 第一版
+
+  ```makefile
+  main:main.c fun1.c fun2.c sum.c
+  	gcc main.c fun1.c fun2.c sum.c -o main.out -I ./
+  ```
+
+  
+
+- 第二版
+
+  ```makefile
+  main.out:main.o fun1.o fun2.o sum.o
+  	gcc main.o fun1.o fun2.o sum.o -o main.out
+  main.o:main.c
+  	gcc  main.c -c  -o main.o  -I ./
+  fun1.o:fun1.c
+  	gcc fun1.c -c -o fun1.o
+  fun2.o:fun2.c
+  	gcc fun2.c -c -o fun2.o
+  sum.o:sum.c
+  	gcc sum.c -c -o sum.o
+  ```
+
+  
+
+
+
+- 第三版
+
+  ```makefile
+  target=main.out
+  object = main.o fun1.o fun2.o sum.o
+  CC= gcc
+  CPPFLAGS = -I ./
+  $(target):$(object)
+  	$(CC) $^ -o $@
+  %.o:%.c
+  	$(CC)  $< -c  -o $@  $(CPPFLAGS)
+  ```
+
+- 第四版
+
+  ```makefile
+  src = $(wildcard ./*.c)
+  object = $(patsubst %.c,%.o,$(src))
+  target = main.out
+  CC= gcc
+  CPPFLAGS = -I ./
+  $(target):$(object)
+  	$(CC) $^ -o $@
+  %.o:%.c
+  	$(CC)  $< -c  -o $@  $(CPPFLAGS)
+  ```
+
+  
+
+- 第五版
+
+  ```makefile
+  src = $(wildcard ./*.c)
+  object = $(patsubst %.c,%.o,$(src))
+  target = main.out
+  CC= gcc
+  CPPFLAGS = -I ./
+  $(target):$(object)
+  	$(CC) $^ -o $@
+  %.o:%.c
+  	$(CC)  $< -c  -o $@  $(CPPFLAGS)
+  
+  .PHONY:clean
+  clean:
+  	-rm -f $(target) $(object)
+  ```
+
+  
+
+
+
+
+
+
+
+
+
+
 
 | ***\*整型常量\**** | ***\*所需类型\****         |
 | ------------------ | -------------------------- |
