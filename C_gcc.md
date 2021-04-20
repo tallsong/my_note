@@ -152,12 +152,15 @@ HANDLE hDll**;** //声明一个dll实例文件句柄 hDll = LoadLibrary**("mydll
 - QT gcc path
  `D:\Programs\QT\Tools\mingw810_64\bin`
 
-| 选项        | 含义                              |
-| ----------- | --------------------------------- |
-| \-o file    | 指定生成的输出文件名为file        |
-| \-E         | 只进行预处理 ,生成`.i`            |
-| \-S\(大写\) | 只进行预处理和编译,生成`.s`       |
-| \-c\(小写\) | 只进行预处理、编译和汇编,生成`.o` |
+| 选项         | 含义                                                         |
+| ------------ | ------------------------------------------------------------ |
+| \-o file     | 指定生成的输出文件名为file                                   |
+| \-E          | 只进行预处理 ,生成`.i`                                       |
+| \-S\(大写\)  | 只进行预处理和编译,生成`.s`                                  |
+| \-c\(小写\)  | 只进行预处理、编译和汇编,生成`.o`                            |
+| -l   library | Search the library named library when linking                |
+| -L dir       | Add directory dir to the list of directories to be searched for -l |
+| -I           | specify directories to search for header files               |
 
 
 | ***\*文件后缀\**** | ***\*含义\****        |
