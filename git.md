@@ -534,3 +534,23 @@ git config --global alias.<alias> <fullName>
 ![github-git-cheat-sheet](./img/github-git-cheat-sheet-1.png)
 ![github-git-cheat-sheet](./img/github-git-cheat-sheet-2.png)
 
+## update username and email
+```bash
+#!/bin/sh
+# https://stackoverflow.com/questions/750172/how-to-change-the-author-and-committer-name-and-e-mail-of-multiple-commits-in-gi
+git filter-branch --env-filter  -'
+OLD_EMAIL="a1249812431@gemail.com"
+CORRECT_NAME="tallsong"
+CORRECT_EMAIL="a1249812431@gmail.com"
+if [ "$GIT_COMMITTER_EMAIL" = "$OLD_EMAIL" ]
+then
+    export GIT_COMMITTER_NAME="$CORRECT_NAME"
+    export GIT_COMMITTER_EMAIL="$CORRECT_EMAIL"
+fi
+if [ "$GIT_AUTHOR_EMAIL" = "$OLD_EMAIL" ]
+then
+    export GIT_AUTHOR_NAME="$CORRECT_NAME"
+    export GIT_AUTHOR_EMAIL="$CORRECT_EMAIL"
+fi
+' --tag-name-filter cat -- --branches --tags
+```
